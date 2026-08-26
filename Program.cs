@@ -1,48 +1,55 @@
 ﻿while (true)
 {
-    Console.Write("Enter first number: ");
-    double firstNumber = Convert.ToDouble(Console.ReadLine());
-
-    Console.Write("Enter operator (+, -, *, /): ");
-    string operation = Console.ReadLine();
-
-    Console.Write("Enter second number: ");
-    double secondNumber = Convert.ToDouble(Console.ReadLine());
-
-    double result;
-
-    switch (operation)
+    try
     {
-        case "+":
-            result = firstNumber + secondNumber;
-            Console.WriteLine($"Result: {result}");
-            break;
+        Console.Write("Enter first number: ");
+        double firstNumber = Convert.ToDouble(Console.ReadLine());
 
-        case "-":
-            result = firstNumber - secondNumber;
-            Console.WriteLine($"Result: {result}");
-            break;
+        Console.Write("Enter operator (+, -, *, /): ");
+        string operation = Console.ReadLine();
 
-        case "*":
-            result = firstNumber * secondNumber;
-            Console.WriteLine($"Result: {result}");
-            break;
+        Console.Write("Enter second number: ");
+        double secondNumber = Convert.ToDouble(Console.ReadLine());
 
-        case "/":
-            if (secondNumber == 0)
-            {
-                Console.WriteLine("Cannot divide by zero.");
-            }
-            else
-            {
-                result = firstNumber / secondNumber;
+        double result;
+
+        switch (operation)
+        {
+            case "+":
+                result = firstNumber + secondNumber;
                 Console.WriteLine($"Result: {result}");
-            }
-            break;
+                break;
 
-        default:
-            Console.WriteLine("Invalid operator.");
-            break;
+            case "-":
+                result = firstNumber - secondNumber;
+                Console.WriteLine($"Result: {result}");
+                break;
+
+            case "*":
+                result = firstNumber * secondNumber;
+                Console.WriteLine($"Result: {result}");
+                break;
+
+            case "/":
+                if (secondNumber == 0)
+                {
+                    Console.WriteLine("Cannot divide by zero.");
+                }
+                else
+                {
+                    result = firstNumber / secondNumber;
+                    Console.WriteLine($"Result: {result}");
+                }
+                break;
+
+            default:
+                Console.WriteLine("Invalid operator.");
+                break;
+        }
+    }
+    catch
+    {
+        Console.WriteLine("Invalid input.");
     }
 
     Console.Write("\nDo you want to perform another calculation? (y/n): ");
